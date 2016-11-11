@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Customer</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+     <ion-searchbar #search (input)="getCustomer(search.value)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Add Button Action -->
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="add()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-card>
+    <!-- Title -->
+    <ion-card-header>
+      Customer Name
+    </ion-card-header>
+    <!-- Details -->
+    <ion-list>
+      <ion-item><strong>Mobile:</strong></ion-item>      
+    </ion-list>
+    <!-- Action -->
+    <ion-row>
+        <ion-col width-20>
+          <button primary clear small (click)="edit()">
+            <ion-icon name="create"></ion-icon>
+            <div>Edit</div>
+          </button>&nbsp;
+        </ion-col>
+        <ion-col>         
+           <strong>Code:</strong>        <br/>
+           <strong>TinNo:</strong>  
+        </ion-col>
+        <ion-col width-20>
+          <button primary clear small (click)="view()">
+            <ion-icon name="eye"></ion-icon>
+            <div>View</div>
+          </button>
+        </ion-col>
+    </ion-row>
+
+  </ion-card>
+ 
+
+</ion-content>

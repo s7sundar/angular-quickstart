@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>  
+</ion-header>
+<ion-content>
+<form [formGroup]="saleEntryGroup" (ngSubmit)="save()">	
+    <ion-list>
+      <ion-item>	
+      	<ion-label stacked>SalesNo</ion-label>   
+	    <ion-input formControlName="sales_no" type="text" placeholder="SalesNo" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	   
+	    <ion-label stacked>SalesDate</ion-label>   
+	    <ion-input formControlName="sales_date" type="text" placeholder="SalesDate" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	
+      	<ion-label stacked>CustomerCode</ion-label>   
+	    <ion-input formControlName="customer_code" type="text" placeholder="CustomerCode" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	
+	  	<ion-label stacked>Outstanding Amount</ion-label>       
+	    <ion-input formControlName="outstanding_amt" type="text" placeholder="Outstanding Amount" value=""></ion-input>
+	  </ion-item>	 
+	  <ion-item>
+	    <ion-input formControlName="sales_id" type="hidden" readonly="readonly"></ion-input>
+	  </ion-item>
+	</ion-list>
+	<button ion-button block color="primary" [disabled]='!saleEntryGroup.valid'><ion-icon name="checkmark-circle-outline"></ion-icon>
+&nbsp;Create Sales</button>	
+</form>
+</ion-content>

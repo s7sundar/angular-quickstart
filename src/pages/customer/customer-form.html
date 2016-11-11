@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>  
+</ion-header>
+<ion-content>
+<form [formGroup]="cfg" (ngSubmit)="save()">
+	<ion-list radio-group formControlName="sales_type" style="margin-bottom:0px">
+	  <ion-item>
+	    <ion-label>Cate 1</ion-label>
+	    <ion-radio value="sales"></ion-radio>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label>Cate 2</ion-label>
+	    <ion-radio value="service"></ion-radio>
+	  </ion-item>
+	</ion-list>
+    <ion-list>
+      <ion-item>	   
+	    <ion-input formControlName="customer_name" type="text" placeholder="CustomerName*" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	   
+	    <ion-input formControlName="customer_code" type="text" placeholder="CustomerCode" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	    
+	    <ion-input formControlName="mobile" type="text" placeholder="Mobile" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	    
+	    <ion-input formControlName="tin_no" type="text" placeholder="TinNo" value=""></ion-input>
+	  </ion-item>	  
+	  <ion-item>	    
+	    <ion-input formControlName="phone" type="text" placeholder="Phone" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	   
+	    <ion-input formControlName="email" type="email" placeholder="Email" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	    
+	    <ion-input formControlName="address1" type="text" placeholder="Address 1" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	    
+	    <ion-input formControlName="address2" type="text" placeholder="Address 2" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	    
+	    <ion-input formControlName="city" type="text" placeholder="City" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>	    
+	    <ion-input formControlName="pincode" type="text" placeholder="Pincode" value=""></ion-input>	   
+	    <ion-input formControlName="customer_id" type="hidden" readonly="readonly"></ion-input>
+	  </ion-item>
+	</ion-list>
+	<button ion-button block color="primary" *ngIf='bButton'  [disabled]='!cfg.valid'><ion-icon name="checkmark-circle-outline"></ion-icon>
+&nbsp;Save Customer</button>	
+</form>
+</ion-content>

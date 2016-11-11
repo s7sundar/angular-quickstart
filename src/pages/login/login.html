@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="text-center" color="primary">
+    <ion-title>ABC Foods</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-card>
+	  <ion-card-header class="text-center">
+	    LOGIN
+	  </ion-card-header>
+	  <ion-card-content>	    
+	    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+	    <ion-list>
+	      <ion-item>
+		    <ion-label stacked>Vechicle Code</ion-label>
+		    <ion-input formControlName="vechicle_code" type="text" value=""></ion-input>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label stacked>Email Address</ion-label>
+		    <ion-input formControlName="email" type="email" value=""></ion-input>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label stacked>Password</ion-label>
+		    <ion-input formControlName="password" type="password" value=""></ion-input>
+		  </ion-item>
+		</ion-list>
+		<button ion-button block color="primary" [disabled] = '!loginForm.valid'><ion-icon name="lock"></ion-icon>&nbsp;SignIn</button>
+		<p><br/>Please contact administrator for credential related queries.</p>
+		</form>
+	  </ion-card-content>
+	</ion-card>	
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="text-center" color="lite">
+    <p class="small-font">&copy; So &amp; So Company</p>
+  </ion-toolbar>
+</ion-footer>
