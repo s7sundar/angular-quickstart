@@ -4,11 +4,15 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { Login } from '../pages/login/login';
+
 import { Customer } from '../pages/customer/customer';
 import { CustomerForm } from '../pages/customer/customer-form';
+
 import { Sales } from '../pages/sales/sales';
 import { SalesEntry } from '../pages/sales/sales-entry';
 import { SalesItem } from '../pages/sales/sales-item';
+import { SalesView } from '../pages/sales/sales-view';
+
 import { Receipt } from '../pages/receipt/receipt'; 
 
 @NgModule({
@@ -20,6 +24,7 @@ import { Receipt } from '../pages/receipt/receipt';
     Sales,
     SalesEntry,
     SalesItem,
+    SalesView,
     Receipt
   ],
   imports: [
@@ -35,6 +40,7 @@ import { Receipt } from '../pages/receipt/receipt';
     Sales,
     SalesEntry,
     SalesItem,
+    SalesView,
     Receipt
   ],
   providers: []

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { NavParams, NavController } from 'ionic-angular';
+import { DatePicker } from 'ionic-native';
 import { SalesService } from './../service/sales.service';
 import { SalesItem } from './sales-item';
 
@@ -40,9 +41,9 @@ export class SalesEntry implements OnInit {
 			sales_id: [this.sales.sales_id],
 		});
 
+		this.initDatePicker();
+
 		this.initData();
-
-
 	}
 
 	initData():void {
@@ -55,6 +56,16 @@ export class SalesEntry implements OnInit {
 		this.saleService.saveEntry(oData);
 		let sales_id = this.saleService.getSalesId();
 		this.navCtrl.push(SalesItem, {sales_id:sales_id});
+	}
+
+	initDatePicker():void {
+		DatePicker.show({
+		  date: new Date(),
+    	  mode: 'date'
+		}).then(
+		  date => console.log('Got date: ', date),
+		  err => console.log('Error occurred while getting date: ', err)
+		);
 	}
 
 }
